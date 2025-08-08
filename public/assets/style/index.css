@@ -1,20 +1,25 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-*{
-    padding: 0;
-    margin: 0;
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+/* Global Defaults (Dark Theme) */
+* {
+  padding: 0;
+  margin: 0;
 }
 
 body {
-    background-color: hsl(227, 75%, 14%) !important;
-    padding: 30px 120px;
+  background-color: hsl(227, 75%, 14%) !important;
+  padding: 30px 120px;
+  font-family: "Noto Sans", sans-serif !important;
 }
+
+/* Header */
 .header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  background-color: hsl(225, 23%, 24%); 
-  border-radius:10px
+  background-color: hsl(225, 23%, 24%);
+  border-radius: 10px;
 }
 
 .logo {
@@ -22,9 +27,10 @@ body {
   object-fit: contain;
 }
 
+/* Icon Button  */
 .icon-button {
   background-color: hsl(225, 23%, 24%);
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.3);
   border: 1px solid hsl(225, 23%, 24%);
   border-radius: 5px !important;
   cursor: pointer;
@@ -33,37 +39,42 @@ body {
   justify-content: center;
   width: 40px;
   height: 40px;
-  padding: 0; /* Remove default padding */
+  padding: 0;
 }
 
 .icon-button:hover {
   background-color: hsl(226, 11%, 37%);
 }
+
 .icon-button:focus {
-  outline: none;             
+  outline: none;
   border: 1px solid hsl(3, 77%, 44%) !important;
 }
 
-
 .icon-button svg {
   display: block;
-
 }
 
+/* Title */
 .title {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  flex-wrap: wrap; 
-  margin-top: 40px;  
+  flex-wrap: wrap;
+  margin-top: 40px;
   margin-bottom: 30px;
   gap: 10px;
-  color: hsl(200, 60%, 99%)
+  color: hsl(200, 60%, 99%);
 }
 
+.title h2 {
+  font-weight: 700;
+}
+
+/*  Mode Buttons  */
 .mode-group {
   display: flex;
-  gap: 5px; /* Spacing between buttons */
+  gap: 5px;
 }
 
 .mode {
@@ -75,39 +86,30 @@ body {
   color: hsl(200, 60%, 99%);
   transition: background-color 0.3s ease;
   cursor: pointer;
-
 }
 
-/* ✅ Active */
 .mode.active {
   background-color: hsl(3, 77%, 44%);
 }
+
 .mode.active:hover {
   background-color: hsl(3, 71%, 56%);
 }
 
-/* ✅ Hover only when NOT active */
 .mode:not(.active):hover {
   background-color: hsl(226, 11%, 37%);
 }
 
-
-
-
-/* start  */
-
-    /* Layout container */
+/*  Cards  */
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px; /* More space between cards both ways */
-  justify-content: center;
+  gap: 15px;
 }
 
-/* Card */
 .card {
   width: 360px;
-  background-color:hsl(225, 23%, 24%) !important;
+  background-color: hsl(225, 23%, 24%) !important;
   border-radius: 15px !important;
   padding: 20px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -123,10 +125,10 @@ body {
   transform: translateY(-4px);
 }
 
-/* Content rows */
+/* Content Rows */
 .row1 {
   display: flex;
-  gap: 20px;
+  gap: 15px;
   align-items: center;
 }
 
@@ -157,9 +159,9 @@ body {
   margin-top: 20px;
 }
 
-/* Button */
+/* Buttons */
 button {
-  border: none;
+  border: 1px solid hsl(226, 11%, 37%);
   border-radius: 20px !important;
   background-color: hsl(226, 25%, 17%);
   color: hsl(217, 61%, 90%);
@@ -175,11 +177,11 @@ button:hover {
 }
 
 button:focus {
-  outline: none;             
+  outline: none;
   border: 1px solid hsl(3, 77%, 44%) !important;
 }
 
-/* Toggle switch */
+/*  Toggle Switch */
 .switch {
   --secondary-container: hsl(3, 71%, 56%);
   --primary: hsl(0, 0%, 93%);
@@ -212,7 +214,7 @@ button:focus {
   width: 1em;
   left: 0.2em;
   bottom: 0.15em;
-  background-color: white;
+  background-color: hsl(200, 60%, 99%);
   border-radius: 50%;
   transition: 0.3s;
 }
@@ -226,54 +228,90 @@ input:checked + .slider:before {
   transform: translateX(1.1em);
 }
 
+/* Light Theme Overrides */
+.light-theme {
+  background-color: #EEF8F9 !important; 
+}
 
-/* stop  */
+.light-theme .header {
+  background-color: hsl(200, 60%, 99%);
+}
 
+.light-theme .icon-button {
+  background-color: hsl(0, 0%, 93%) !important;
+  border: none;
+}
+.light-theme .icon-button:hover {
+  background-color: hsl(0, 0%, 78%) !important;
+}
 
+.light-theme .title {
+  color: black;
+  font-weight: 700;
+}
 
+.light-theme .mode:not(.active):hover {
+  background-color: hsl(217, 61%, 90%);
+}
 
+.light-theme .card {
+  background-color: hsl(200, 60%, 99%) !important;
+}
+
+.light-theme .row1 span {
+  color: black;
+}
+.light-theme .row1 p {
+  font-size: 16px;
+  color: hsl(226, 11%, 37%);
+}
+
+.light-theme button {
+  background-color: hsl(200, 60%, 99%);
+  color: hsl(226, 25%, 17%);
+  border: 1px solid hsl(0, 0%, 78%);
+}
+
+/* Toggle switch */
+.light-theme .slider {
+  background-color: hsl(0, 0%, 78%);
+}
+
+/* Mobile Styles   */
 @media (max-width: 480px) {
   body {
     background-color: hsl(227, 75%, 14%);
-    padding: 20px 16px; /* ✅ reduced horizontal padding */
+    padding: 20px 16px;
   }
-
   .header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
     padding: 6px 10px;
     background-color: hsl(225, 23%, 24%);
     border-radius: 10px;
   }
-
   .logo {
     height: 25px;
   }
-
   .icon-button {
     width: 32px;
     height: 32px;
     border-radius: 4px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.25);
   }
-
   .icon-button svg {
     width: 20px;
     height: 20px;
   }
-  
-.title {
+  .title {
+    justify-content: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    gap: 10px;
+    color: hsl(200, 60%, 99%);
+  }
+  .card-container {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: wrap;
-  margin-top: 20px;  
-  margin-bottom: 20px;
-  gap: 10px;
-  color: hsl(200, 60%, 99%)
+  gap: 15px;
+  justify-content: center; /* centers cards horizontally */
 }
 }
-
-
-

@@ -2,8 +2,13 @@ import React, { useState } from "react";
 import Button from "./Button";
 import buttonMode from "../mode.js";
 
-function Title() {
+function Title({ filter, setFilter }) {
   const [activeId, setActiveId] = useState(1);
+
+  const handleClick = (id, name) => {
+    setActiveId(id);
+    setFilter(name.toLowerCase()); // "all" | "active" | "inactive"
+  };
 
   return (
     <div className="title">
@@ -14,7 +19,7 @@ function Title() {
             key={data.id}
             className={`mode ${data.id === activeId ? "active" : ""}`}
             mode={data.name}
-            onClick={() => setActiveId(data.id)}
+            onClick={() => handleClick(data.id, data.name)}
           />
         ))}
       </div>

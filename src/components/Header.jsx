@@ -6,8 +6,8 @@ function Header(props) {
     <header className="header">
       <img src={props.logo} alt="Logo" class="logo" />
 
-      <button className="icon-button">
-        <img src={props.theme} alt="sunset" />
+      <button className="icon-button" onClick={props.onThemeToggle}>
+        <img src={props.themeIcon} alt="sunset" />
       </button>
     </header>
   );

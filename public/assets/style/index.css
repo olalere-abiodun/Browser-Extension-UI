@@ -317,6 +317,10 @@ input:checked + .slider:before {
     gap: 10px;
     color: hsl(200, 60%, 99%);
   }
+    .card {
+    flex: 1 1 100%; 
+    max-width: 100%;
+  }
   .card-container {
   display: flex;
   flex-wrap: wrap;

@@ -104,7 +104,8 @@ body {
 .card-container {
   display: flex;
   flex-wrap: wrap;
-  gap: 15px;
+  gap: 10px;
+  
 }
 
 .card {
@@ -275,6 +276,13 @@ input:checked + .slider:before {
 /* Toggle switch */
 .light-theme .slider {
   background-color: hsl(0, 0%, 78%);
+}
+
+.attribution {
+  font-size: 16px;
+  color: hsl(0, 0%, 78%);
+  bottom: 0;
+  margin-top: 40px;
 }
 
 /* Mobile Styles   */

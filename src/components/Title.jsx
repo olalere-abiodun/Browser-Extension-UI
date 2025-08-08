@@ -3,7 +3,7 @@ import Button from "./Button";
 import buttonMode from "../mode.js";
 
 function Title() {
-  const [activeId, setActiveId] = useState(1); // Default active is "All"
+  const [activeId, setActiveId] = useState(1);
 
   return (
     <div className="title">

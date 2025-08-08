@@ -2,23 +2,36 @@ import React from "react";
 import ReactDOM from "react-dom"
 import Header from "./Header.jsx";
 import Title from "./Title.jsx";
-import Button from "./Button.jsx";
-import logo from '../assets/images/logo.svg';
-import themeIcon from '../assets/images/icon-sun.svg';
-import buttonMode from "../mode.js";
 import Card from "./card.jsx";
+import cardData from "../cardata.js";
 
-
+function createCard(data) {
+    return (
+        <Card 
+            key = {data.id}
+            logo = {data.logo}
+            name = {data.name}
+            description = {data.description}
+            isActive = {data.isActive}
+        />
+    );
+}
 
 function App(){
     return (
         <div>
             <Header 
-             logo={logo}
-             theme ={themeIcon}
+                logo="/assets/images/logo.svg" 
+                theme="/assets/images/icon-sun.svg"
             />
             <Title />
-            <Card />
+            {/* <Card /> */}
+            <div className="card-container">
+              {cardData.map(createCard)}
+
+            </div>
+
+
             
             
         </div>
